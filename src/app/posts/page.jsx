@@ -1,10 +1,6 @@
 import React from "react";
+import { getPostData } from "../services/api";
 
-const getPostData = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const data = await res.json();
-  return data;
-};
 const PostPage = async () => {
   const postData = await getPostData();
   console.log(postData);
@@ -14,7 +10,7 @@ const PostPage = async () => {
         This is Post Page
       </h1>
       <div className="grid grid-cols-4 gap-5">
-        {postData?.map(({ title, body, id }) => (
+        {postData?.slice(0, 20)?.map(({ title, body, id }) => (
           <div key={id} className="border-2 py-4 px-2">
             <h4 className="">Title: {title}</h4>
             <p>Description: {body}</p>
