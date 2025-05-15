@@ -15,6 +15,10 @@ const Navbar = () => {
       title: "Post",
       href: "/posts",
     },
+    {
+      title: "Meals",
+      href: "/meals",
+    },
   ];
   const handler = () => {
     router.push("/about");
@@ -28,7 +32,7 @@ const Navbar = () => {
   return (
     <nav className="bg-red-400 flex justify-between items-center px-4">
       <h6 className="text-3xl">
-        NEXT <span className="text-cyan-300"> Hero</span>
+        Next <span className="text-cyan-300"> Meal</span>
       </h6>
       <ul className="flex justify-center space-x-4 py-4 px-2 cursor-pointer">
         {links?.map((link) => (
