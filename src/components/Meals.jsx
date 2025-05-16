@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const Meals = () => {
@@ -40,11 +41,9 @@ const Meals = () => {
   const handler = (e) => {
     setSearch(e.target.value);
   };
-
   useEffect(() => {
     loadData();
-  }, [search]);
-
+  }, []);
   return (
     <div>
       <input
@@ -63,6 +62,12 @@ const Meals = () => {
         {meals.length > 0 ? (
           meals.map((meal) => (
             <div key={meal.idMeal} className="border-2 p-4">
+              <Image
+                src={meal?.strMealThumb}
+                alt={meal?.strMeal}
+                width={500}
+                height={500}
+              />
               <h6>{meal.strMeal}</h6>
               <p>{meal.strInstructions}</p>
             </div>
