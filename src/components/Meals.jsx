@@ -8,10 +8,12 @@ const Meals = () => {
 
   const loadData = async () => {
     try {
-      // Only make API call if search is not empty
-      if (search === "") {
+      // শুধুমাত্র ১টি অক্ষর থাকলে API কল করবে
+      if (search.length !== 1) {
         setMeals([]);
-        setError("No Data Found");
+        setError(
+          search.length > 1 ? "Please enter only one letter" : "No Data Found"
+        );
         return;
       }
 
@@ -20,11 +22,13 @@ const Meals = () => {
       );
       const data = await res.json();
 
-      if (!data.meals) {
-        setMeals([]);
-        setError("No Data Found");
+      // ডাটা সেট করার আগে চেক করছি
+      const mealsData = data.meals || [];
+      setMeals(mealsData);
+
+      if (mealsData.length === 0) {
+        setError("No meals found for this letter");
       } else {
-        setMeals(data.meals);
         setError("");
       }
     } catch (error) {
@@ -46,8 +50,7 @@ const Meals = () => {
       <input
         onChange={handler}
         type="text"
-        placeholder="search meals...."
-        // value={search}
+        placeholder="Enter a single letter..."
         className="border-none outline-none bg-white text-black p-4 "
       />
       <button
@@ -65,7 +68,7 @@ const Meals = () => {
             </div>
           ))
         ) : (
-          <h6>{error || "No meals found"}</h6>
+          <h6>{error}</h6>
         )}
       </div>
     </div>
