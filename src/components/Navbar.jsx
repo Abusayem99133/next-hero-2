@@ -19,6 +19,10 @@ const Navbar = () => {
       title: "Meals",
       href: "/meals",
     },
+    {
+      title: "About",
+      href: "/about",
+    },
   ];
   const handler = () => {
     router.push("/about");
