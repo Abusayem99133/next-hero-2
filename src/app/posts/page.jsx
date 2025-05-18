@@ -1,7 +1,9 @@
 import React from "react";
 import { getPostData } from "../services/api";
 import Link from "next/link";
-
+export const metadata = {
+  title: "Next-Hero | Post Page",
+};
 const PostPage = async () => {
   const postData = await getPostData();
   console.log(postData);
