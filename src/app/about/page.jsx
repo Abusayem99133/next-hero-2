@@ -1,6 +1,6 @@
 import React from "react";
 export const metadata = {
-  title: "About | Next Hero",
+  title: "About",
   description: "About Page",
 };
 const AboutPage = () => {

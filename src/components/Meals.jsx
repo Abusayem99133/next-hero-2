@@ -1,7 +1,10 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-
+export const metadata = {
+  tittle: "Meals",
+  description: "Meals Page",
+};
 const Meals = () => {
   const [search, setSearch] = useState("a");
   const [error, setError] = useState("");

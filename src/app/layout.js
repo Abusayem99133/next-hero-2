@@ -13,7 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Next-Mobile phone cheap price ",
+  title: {
+    default: "Next  Hero",
+    template: "%s | Next Hero",
+  },
   description: "Super Powerful Next Website",
 };
 
