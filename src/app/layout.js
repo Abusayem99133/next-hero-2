@@ -18,6 +18,9 @@ export const metadata = {
     template: "%s | Next Hero",
   },
   description: "Super Powerful Next Website",
+  other: {
+    keyword: "Next.js, React.js, Javascript, Next Hero",
+  },
 };
 
 export default function RootLayout({ children }) {
