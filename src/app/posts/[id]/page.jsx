@@ -1,12 +1,12 @@
 import { getDetailsPage } from "@/app/services/api";
 import React from "react";
-export async function generateMetadata({ params }) {
+export const generateMetadata = async ({ params }) => {
   const post = await getDetailsPage(params.id);
   return {
-    title: post.title,
+    title: post.title.slice(0, 24),
     description: post.body,
   };
-}
+};
 
 const PostDetailsPage = async ({ params }) => {
   console.log(params?.id);
