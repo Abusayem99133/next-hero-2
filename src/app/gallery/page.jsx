@@ -1,6 +1,9 @@
 import Image from "next/image";
 import React from "react";
-
+export const metadata = {
+  title: "gallery",
+  description: "this is gallery",
+};
 const GalleryPage = () => {
   return (
     <div className="min-h-screen text-center">
