@@ -1,7 +1,9 @@
 import Image from "next/image";
 import React from "react";
 export const metadata = {
-  title: "gallery",
+  title: {
+    absolute: "Gallery",
+  },
   description: "this is gallery",
 };
 const GalleryPage = () => {
