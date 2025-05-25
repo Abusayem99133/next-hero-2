@@ -4,7 +4,7 @@ export const metadata = {
   title: {
     absolute: "Gallery",
   },
-  description: "this is gallery",
+  description: "this is gallery in the world",
 };
 const GalleryPage = () => {
   return (
