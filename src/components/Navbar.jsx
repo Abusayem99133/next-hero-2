@@ -27,6 +27,10 @@ const Navbar = () => {
       title: "Gallery",
       href: "/gallery",
     },
+    {
+      title: "Browse",
+      href: "/browse",
+    },
   ];
   const handler = () => {
     router.push("/about");
