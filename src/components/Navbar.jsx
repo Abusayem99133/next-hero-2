@@ -27,6 +27,7 @@ const Navbar = () => {
       title: "Gallery",
       href: "/gallery",
     },
+    // aita fake route and navbar
     {
       title: "Browse",
       href: "/browse",
