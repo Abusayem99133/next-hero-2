@@ -1,11 +1,12 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 export const metadata = {
   tittle: "Meals",
   description: "Meals Page",
 };
-const Meals = () => {
+const Meals = ({ params }) => {
   const [search, setSearch] = useState("a");
   const [error, setError] = useState("");
   const [meals, setMeals] = useState([]);
@@ -47,6 +48,7 @@ const Meals = () => {
   useEffect(() => {
     loadData();
   }, []);
+  console.log(meals);
   return (
     <div>
       <input
@@ -73,6 +75,9 @@ const Meals = () => {
               />
               <h6>{meal.strMeal}</h6>
               <p>{meal.strInstructions}</p>
+              <button className="py-4 px-2 border-2 cursor-pointer hover:bg-blue-600">
+                <Link href={`meals/${meal.idMeal}`}>View Details</Link>
+              </button>
             </div>
           ))
         ) : (
