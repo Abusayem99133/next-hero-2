@@ -13,7 +13,6 @@ const Meals = ({ params }) => {
 
   const loadData = async () => {
     try {
-      // শুধুমাত্র ১টি অক্ষর থাকলে API কল করবে
       if (search.length !== 1) {
         setMeals([]);
         setError(
@@ -27,7 +26,6 @@ const Meals = ({ params }) => {
       );
       const data = await res.json();
 
-      // ডাটা সেট করার আগে চেক করছি
       const mealsData = data.meals || [];
       setMeals(mealsData);
 

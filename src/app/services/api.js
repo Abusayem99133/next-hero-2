@@ -10,8 +10,8 @@ export const getDetailsPage = async (id) => {
 };
 export const getMealsDetailsPage = async (id) => {
   const res = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=/${id}`
+    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
   );
   const data = await res.json();
-  return data;
+  return data.meals?.[0]; // Return the actual meal object
 };
