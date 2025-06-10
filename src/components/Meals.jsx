@@ -57,7 +57,7 @@ const Meals = ({ params }) => {
       />
       <button
         onClick={loadData}
-        className="border-none p-4 text-black bg-red-300 hover:bg-sky-500 hover:cursor-pointer"
+        className="border-none p-4 text-black bg-red-300 hover:bg-sky-600 hover:cursor-pointer"
       >
         Search
       </button>
